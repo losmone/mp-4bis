@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import StyledComponentsRegistry from "../lib/Registry";
 
-// Configuration de la police
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -26,10 +26,13 @@ export default function RootLayout({
           flexDirection: 'column', 
           minHeight: '100vh' 
       }}>
-        <NavBar />
-        {children}
-        <Footer />
+        <StyledComponentsRegistry>
+          <NavBar />
+          {children}
+          <Footer />
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
 }
+
