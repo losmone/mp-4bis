@@ -14,7 +14,7 @@ const Form = styled.form`
 export default function IpForm() {
     const [ip, setIp] = useState("");
     const router = useRouter();
-
+    /*It says that FormEvent is deprecated but it's still functional and i haven't found a better alternative yet */
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (ip.trim()) {
@@ -26,12 +26,12 @@ export default function IpForm() {
         <Form onSubmit={handleSubmit}>
             <StyledInput 
                 type="text" 
-                placeholder="Entrez une IP (ex: 8.8.8.8)"
+                placeholder="Enter an IP (e.g., 8.8.8.8)"
                 value={ip}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setIp(e.target.value)}
                 required
             />
-            <StyledButton type="submit">Localiser l'IP</StyledButton>
+            <StyledButton type="submit">Locate the IP</StyledButton>
         </Form>
     );
 }

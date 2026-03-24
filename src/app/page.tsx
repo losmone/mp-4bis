@@ -6,18 +6,18 @@ import IpForm from "../components/IpForm";
 export default function HomePage() {
     return (
         <MainContainer>
-            <h1 style={{ color: "#5d4037", marginBottom: "20px" }}>
-                🔍 Traqueur d'Adresse IP
+            <h1 style={{ marginBottom: "20px" }}>
+                🔍 IP Address Tracker
             </h1>
-            <p style={{ marginBottom: "30px", color: "#666" }}>
-                Entrez une adresse IP pour obtenir sa localisation précise.
+            <p style={{ marginBottom: "30px", color: "#94A3B8", textAlign: "center" }}>
+                Enter an IP address to get its precise location.
             </p>
             
-            {/* Le formulaire gère lui-même sa logique et son style */}
+            {/* The form manages its own logic and style */}
             <IpForm />
             
             <p style={{ marginTop: "40px", fontSize: "0.8rem", color: "#999" }}>
-                Propulsé par l'API IPstack - Projet MP4
+                Propulsed by the IPstack API - MP4 Project
             </p>
         </MainContainer>
     );

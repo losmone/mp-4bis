@@ -1,6 +1,13 @@
+import { Inter } from "next/font/google";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+
+// Configuration de la police
+const inter = Inter({ subsets: ["latin"] });
+
 export const metadata = {
-  title: 'Traqueur IP - MP4',
-  description: 'Projet Next.js avec IPstack',
+  title: 'IP-Tracker | MP4',
+  description: 'Localisation d\'adresse IP moderne',
 };
 
 export default function RootLayout({
@@ -9,9 +16,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
-      <body style={{ margin: 0, padding: 0, fontFamily: 'Arial, sans-serif', backgroundColor: '#fdf5e6' }}>
+    <html lang="en">
+      <body className={inter.className} style={{ 
+          margin: 0, 
+          padding: 0, 
+          backgroundColor: '#0F172A', /* Fond bleu nuit très sombre */
+          color: '#F8FAFC', /* Texte blanc cassé global */
+          display: 'flex', 
+          flexDirection: 'column', 
+          minHeight: '100vh' 
+      }}>
+        <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
